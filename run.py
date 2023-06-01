@@ -38,7 +38,31 @@ def set_ship_location():
     w_1 = random.randrange(5)
     x_1 = random.randrange(5)
     y_1 = random.randrange(5)
-    print(w_1,x_1,y_1) 
+    z_1 = random.randrange(5)
+    print(w_1,x_1,y_1,z_1) 
+    grid_w[w_1]= "@"
+    grid_x[x_1]= "@"
+    grid_y[y_1]= "@"
+    grid_z[z_1]= "@"
+    create_grid()
 
 
 set_ship_location()
+
+def get_user_target_x_axis():
+    x_axis = input("please enter the row no:")
+    
+    return x_axis
+    
+def get_user_target_y_axis():
+    y_axis = input("please enter the column no:")
+
+    return y_axis
+
+def compare_user_hit_with_ship_location():
+    x = get_user_target_x_axis()
+    y = get_user_target_y_axis()
+    print (x)
+
+
+compare_user_hit_with_ship_location()    

@@ -49,20 +49,45 @@ def set_ship_location():
 
 set_ship_location()
 
-def get_user_target_x_axis():
-    x_axis = input("please enter the row no:")
-    
-    return x_axis
-    
 def get_user_target_y_axis():
     y_axis = input("please enter the column no:")
-
+    
     return y_axis
+    
+def get_user_target_x_axis():
+    x_axis = input("please enter the row no:")
+
+    return x_axis
 
 def compare_user_hit_with_ship_location():
-    x = get_user_target_x_axis()
     y = get_user_target_y_axis()
-    print (x)
+    x = get_user_target_x_axis()
+    if (y == 1 and x == 1)& (grid_w[0] == "@"):
+        print("Congratulate you hit the Target")
+    elif (y==1 and x==2)&(grid_w[1] == "@"):
+        print("Congratulate you hit the Target")
+    elif (y==1 and x==3)&(grid_w[2]== "@"):
+        print("Congratulate you hit the Target")
+    elif (y==1 and x==4)&(grid_w[3]== "@"):
+        print("Congratulate you hit the Target")
+    elif(y==2 and x==1)&(grid_x[0]== "@"):  
+    elif(y==2 and x==2)&(grid_x[1]== "@"):
+    elif(y==2 and x==3)&(grid_x[2]== "@"):
+    elif(y==2 and x==4)&(grid_x[3]== "@"):
+    elif(y==3 and x==1)&(grid_y[0]== "@"):  
+    elif(y==3 and x==2)&(grid_y[1]== "@"):
+    elif(y==3 and x==3)&(grid_y[2]== "@"):
+    elif(y==3 and x==4)&(grid_y[3]== "@"):
+    elif(y==4 and x==1)&(grid_z[0]== "@"):  
+    elif(y==4 and x==2)&(grid_z[1]== "@"):
+    elif(y==4 and x==3)&(grid_z[2]== "@"):
+    elif(y==4 and x==4)&(grid_z[3]== "@"):
+
+    else:
+        print("Sorry please enter new coordinates")    
+
+        
+    print (x,y)
 
 
 compare_user_hit_with_ship_location()    

@@ -9,6 +9,10 @@ grid_w = [".", ".", ".", "."]
 grid_x = [".", ".", ".", "."]
 grid_y = [".", ".", ".", "."]
 grid_z = [".", ".", ".", "."]
+grid_a = [".", ".", ".", "."]
+grid_b = [".", ".", ".", "."]
+grid_c = [".", ".", ".", "."]
+grid_d = [".", ".", ".", "."]
 previous_input_coordinates = []
 
 user_ship = 4
@@ -17,7 +21,7 @@ user_score = 0
 compter_score = 0
 
 
-def create_grid():
+def create_grid_user():
 
     for x in range(len(grid_w)):
 
@@ -25,6 +29,16 @@ def create_grid():
         print(grid_x[x], end=" ")
         print(grid_y[x], end=" ")
         print(grid_z[x], end=" ")
+        print(" ")
+        
+def create_grid_computer():
+
+    for x in range(len(grid_a)):
+
+        print(grid_a[x], end=" ")
+        print(grid_b[x], end=" ")
+        print(grid_c[x], end=" ")
+        print(grid_d[x], end=" ")
         print(" ")
 
 
@@ -35,7 +49,7 @@ def change_grid_value():
     print(grid_w)
 
 
-def set_ship_location():
+def set_ship_location_user():
     global grid_w 
     grid_w = [".", ".", ".", "."]
     global grid_x 
@@ -44,6 +58,8 @@ def set_ship_location():
     grid_y= [".", ".", ".", "."]
     global grid_z 
     grid_z= [".", ".", ".", "."]
+    global user_name
+    print (f'{user_name} Welcome')
     w_1 = random.randrange(3)
     x_1 = random.randrange(3)
     y_1 = random.randrange(3)
@@ -53,8 +69,29 @@ def set_ship_location():
     grid_x[x_1] = "@"
     grid_y[y_1] = "@"
     grid_z[z_1] = "@"
-    create_grid()
+    
 
+def set_ship_location_computer():
+    global grid_a 
+    grid_a = [".", ".", ".", "."]
+    global grid_b 
+    grid_b= [".", ".", ".", "."]
+    global grid_c 
+    grid_c= [".", ".", ".", "."]
+    global grid_d 
+    grid_d= [".", ".", ".", "."]
+    global user_name
+    print ("computer board")
+    w_1 = random.randrange(3)
+    x_1 = random.randrange(3)
+    y_1 = random.randrange(3)
+    z_1 = random.randrange(3)
+    print(w_1, x_1, y_1, z_1)
+    grid_a[w_1] = "@"
+    grid_b[x_1] = "@"
+    grid_c[y_1] = "@"
+    grid_d[z_1] = "@"
+    
 
 def get_user_targets():
     global previous_input_coordinates
@@ -64,8 +101,8 @@ def get_user_targets():
        x_axis = int(input("please enter the row no:"))
 
        while y_axis > 4 and x_axis > 4:
-           y_axis = int(input("please enter no between (1 & 3):"))
-           x_axis = int(input("please enter no between (1 & 3):"))
+           y_axis = int(input("please enter number between (1 & 4):"))
+           x_axis = int(input("please enter number between (1 & 4):"))
        if previous_input_coordinates == [] :
            previous_input_coordinates.append((y_axis,x_axis))
            
@@ -74,8 +111,9 @@ def get_user_targets():
             for x in range(len(previous_input_coordinates)):
 
                 while previous_input_coordinates[x] == (y_axis,x_axis) :
-                    y_axis = int(input("please enter a new column no, this was used before:"))
-                    x_axis = int(input("please enter a new row no, this was used before:"))
+                    print("please enter new set of coordinates, these coordinates were used before")
+                    y_axis = int(input("please enter a new column no:"))
+                    x_axis = int(input("please enter a new row no:"))
                 
             else:
                 previous_input_coordinates.append((y_axis,x_axis))
@@ -174,7 +212,10 @@ def compare_user_hit_with_ship_location():
 
 
 def run_game():
-    set_ship_location()
+    set_ship_location_user()
+    set_ship_location_computer()
+    create_grid_user()
+    create_grid_computer()
     while user_ship != 0:
         print(user_score)
         print(previous_input_coordinates)

@@ -6,11 +6,11 @@ print("-------------------------------")
 
 user_name = input("please enter you name to start game:")
 grid_w = [".", ".", ".", "."]
-grid_x = [".", ".", ".", ".", "."]
-grid_y = [".", ".", ".", ".", "."]
-grid_z = [".", ".", ".", ".", "."]
-previous_input_y_axis = []
-previous_input_x_axis = []
+grid_x = [".", ".", ".", "."]
+grid_y = [".", ".", ".", "."]
+grid_z = [".", ".", ".", "."]
+previous_input_coordinates = []
+
 user_ship = 4
 computer_ship = 4
 user_score = 0
@@ -36,6 +36,14 @@ def change_grid_value():
 
 
 def set_ship_location():
+    global grid_w 
+    grid_w = [".", ".", ".", "."]
+    global grid_x 
+    grid_x= [".", ".", ".", "."]
+    global grid_y 
+    grid_y= [".", ".", ".", "."]
+    global grid_z 
+    grid_z= [".", ".", ".", "."]
     w_1 = random.randrange(3)
     x_1 = random.randrange(3)
     y_1 = random.randrange(3)
@@ -48,54 +56,40 @@ def set_ship_location():
     create_grid()
 
 
-def get_user_target_y_axis():
-    global previous_input_y_axis
-
+def get_user_targets():
+    global previous_input_coordinates
+    
     try:
        y_axis = int(input("please enter the column no:"))
+       x_axis = int(input("please enter the row no:"))
 
-       while y_axis > 4:
-           y_axis = int(input("please enter no between (1 & 4): "))
-       if previous_input_y_axis == []:
-           previous_input_y_axis.append(y_axis)
+       while y_axis > 4 and x_axis > 4:
+           y_axis = int(input("please enter no between (1 & 3):"))
+           x_axis = int(input("please enter no between (1 & 3):"))
+       if previous_input_coordinates == [] :
+           previous_input_coordinates.append((y_axis,x_axis))
+           
        else:
 
-            for x in range(len(previous_input_y_axis)):
+            for x in range(len(previous_input_coordinates)):
 
-                while previous_input_y_axis[x] == y_axis:
-                    y_axis = int(
-                      input("please enter a new column no, this was used before:"))
+                while previous_input_coordinates[x] == (y_axis,x_axis) :
+                    y_axis = int(input("please enter a new column no, this was used before:"))
+                    x_axis = int(input("please enter a new row no, this was used before:"))
+                
             else:
-                previous_input_y_axis.append(y_axis)
-                previous_input_y_axis = list(dict.fromkeys(previous_input_y_axis))
+                previous_input_coordinates.append((y_axis,x_axis))
+                previous_input_coordinates = list(dict.fromkeys(previous_input_coordinates))
+                
     except ValueError:
         try:
            y_axis = int(input("please enter an integer no:"))
+           x_axis = int(input("please enter an integer no:"))
         except ValueError :
             run_game()   
        
-    return y_axis
+    return y_axis , x_axis
 
-
-def get_user_target_x_axis():
-    global previous_input_x_axis
-    x_axis = int(input("please enter the row no:"))
-
-    if previous_input_x_axis == []:
-        previous_input_x_axis.append(x_axis)
-    else:
-
-        for x in range(len(previous_input_x_axis)):
-
-            while previous_input_x_axis[x] == x_axis:
-                x_axis = int(
-                    input("please enter a new row no, this was used before:"))
-
-        else:
-            previous_input_x_axis.append(x_axis)
-            previous_input_x_axis = list(dict.fromkeys(previous_input_x_axis))
-
-    return x_axis
 
 
 def remove_ship_from_score():
@@ -109,8 +103,7 @@ def update_the_score():
 
 
 def compare_user_hit_with_ship_location():
-    y = get_user_target_y_axis()
-    x = get_user_target_x_axis()
+    y,x = get_user_targets()
     if y == 1 and x == 1 and grid_w[0] == "@":
         print("Congratulate you hit the Target")
         remove_ship_from_score()
@@ -184,11 +177,11 @@ def run_game():
     set_ship_location()
     while user_ship != 0:
         print(user_score)
-        print(previous_input_y_axis)
-        print(previous_input_x_axis)
+        print(previous_input_coordinates)
+        
         compare_user_hit_with_ship_location()
     else:
-        print("GAME OVER")
+        print("The Enemy surrender and you won the battel")
 
 
 run_game()

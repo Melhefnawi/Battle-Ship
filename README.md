@@ -1,32 +1,27 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# ULTIMATE Battleships
 
-Welcome,
+Ultimate Battleships is a Python terminal game, which run on the mock terminal on Heroku
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+Users can try to beat the computer by finding all the computer's battleships before the computer finds theirs.
+Each battleship occupies one square on the board.
 
-## Reminders
+###### Here is a live version of my project 
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+## add a photo here for ami 
 
-## Creating the Heroku app
+## How to play 
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+Ultimate Battleships is based on the classic pen-and-paper game. You can read more about it on WiKipedia.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+In this version, the player enters their name and two boards are randomly generated.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+The player can see Where their ships are, indicated by an @ sign but cannot see where the computer's ships are.
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+Guesses are collected in the two lists, that appears every new round of the game.
 
-Connect your GitHub repository and deploy as normal.
+The Player and the computer then take it in turns to make guesses and try to sink each other's battleships.
 
-## Constraints
+The Winner is the player who sink all the their opponent's battleships first.
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 
----
 
-Happy coding!

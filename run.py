@@ -247,6 +247,11 @@ def compare_user_hit_with_ship_location():
         print("Congratulate you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
+    elif y == 2 and x == 2 and grid_b[1] == "@":    
+        print("Congratulate you hit the Target")
+        remove_ship_from_score_user()
+        update_the_score_user()
+    elif y == 2 and x == 2 and grid_b[2] == "@":    
         print("Congratulate you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
@@ -298,6 +303,7 @@ def run_game():
     print(f"----Computer Battle Board------")
     create_grid_computer()
     while user_ship != 0 and computer_ship !=0:
+        print(f"---------------New Round---------------")
         print(f"USER_SCORE:{user_score}")
         print(f"Computer_SCORE:{computer_score}")
         print(f"Input_Coordinates_User:{previous_input_coordinates_user}")

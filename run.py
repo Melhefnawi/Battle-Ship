@@ -13,7 +13,8 @@ grid_a = [".", ".", ".", "."]
 grid_b = [".", ".", ".", "."]
 grid_c = [".", ".", ".", "."]
 grid_d = [".", ".", ".", "."]
-previous_input_coordinates = []
+previous_input_coordinates_user = []
+previous_input_coordinates_computer = []
 
 user_ship = 4
 computer_ship = 4
@@ -94,7 +95,7 @@ def set_ship_location_computer():
     
 
 def get_user_targets():
-    global previous_input_coordinates
+    global previous_input_coordinates_user
     
     try:
        y_axis = int(input("please enter the column no:"))
@@ -103,21 +104,21 @@ def get_user_targets():
        while y_axis > 4 and x_axis > 4:
            y_axis = int(input("please enter number between (1 & 4):"))
            x_axis = int(input("please enter number between (1 & 4):"))
-       if previous_input_coordinates == [] :
-           previous_input_coordinates.append((y_axis,x_axis))
+       if previous_input_coordinates_user == [] :
+           previous_input_coordinates_user.append((y_axis,x_axis))
            
        else:
 
-            for x in range(len(previous_input_coordinates)):
+            for x in range(len(previous_input_coordinates_user)):
 
-                while previous_input_coordinates[x] == (y_axis,x_axis) :
+                while previous_input_coordinates_user[x] == (y_axis,x_axis) :
                     print("please enter new set of coordinates, these coordinates were used before")
                     y_axis = int(input("please enter a new column no:"))
                     x_axis = int(input("please enter a new row no:"))
                 
             else:
-                previous_input_coordinates.append((y_axis,x_axis))
-                previous_input_coordinates = list(dict.fromkeys(previous_input_coordinates))
+                previous_input_coordinates_user.append((y_axis,x_axis))
+                previous_input_coordinates_user = list(dict.fromkeys(previous_input_coordinates_user))
                 
     except ValueError:
         try:
@@ -128,14 +129,28 @@ def get_user_targets():
        
     return y_axis , x_axis
 
+def get_computer_targets():
+    global previous_input_coordinates_computer 
+
+    y_axis = random.randrange(4)
+    x_axis = random.randrange(4)
+
+    return y_axis , x_axis
 
 
-def remove_ship_from_score():
+def remove_ship_from_score_user():
     global user_ship
     user_ship -= 1
+    
+def remove_ship_from_score_computer():
+    global computer_ship
+    computer_ship -= 1
 
+def update_the_score_computer():
+    global computer_score
+    computer_score += 1
 
-def update_the_score():
+def update_the_score_user():
     global user_score
     user_score += 1
 
@@ -144,138 +159,138 @@ def compare_user_hit_with_ship_location():
     y,x = get_user_targets()
     if y == 1 and x == 1 and grid_w[0] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_user()
+        update_the_score_user()
     elif y == 1 and x == 2 and grid_w[1] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_user()
+        update_the_score_user()
     elif y == 1 and x == 3 and grid_w[2] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_user()
+        update_the_score_user()
     elif y == 1 and x == 4 and grid_w[3] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_user()
+        update_the_score_user()
     elif y == 2 and x == 1 and grid_x[0] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_user()
+        update_the_score_user()
     elif y == 2 and x == 2 and grid_x[1] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_user()
+        update_the_score_user()
     elif y == 2 and x == 3 and grid_x[2] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_user()
+        update_the_score_user()
     elif y == 2 and x == 4 and grid_x[3] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_user()
+        update_the_score_user()
     elif y == 3 and x == 1 and grid_y[0] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_user()
+        update_the_score_user()
     elif y == 3 and x == 2 and grid_y[1] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_user()
+        update_the_score_user()
     elif y == 3 and x == 3 and grid_y[2] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_user()
+        update_the_score_user()
     elif y == 3 and x == 4 and grid_y[3] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_user()
+        update_the_score_user()
     elif y == 4 and x == 1 and grid_z[0] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_user()
+        update_the_score_user()
     elif y == 4 and x == 2 and grid_z[1] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_user()
+        update_the_score_user()
     elif (y == 4 and x == 3 and grid_z[2] == "@"):
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_user()
+        update_the_score_user()
     elif y == 4 and x == 4 and grid_z[3] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_user()
+        update_the_score_user()
 
     else:
         print("Sorry please enter new coordinates")
 
 def compare_computer_hit_with_ship_location():
-    y,x = get_user_targets()
+    y,x = get_computer_targets()
     if y == 1 and x == 1 and grid_a[0] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_computer()
+        update_the_score_computer()
     elif y == 1 and x == 2 and grid_a[1] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_computer()
+        update_the_score_computer()
     elif y == 1 and x == 3 and grid_a[2] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_computer()
+        update_the_score_computer()
     elif y == 1 and x == 4 and grid_a[3] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_computer()
+        update_the_score_computer()
     elif y == 2 and x == 1 and grid_b[0] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_computer()
+        update_the_score_computer()
     elif y == 2 and x == 2 and grid_b[1] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_computer()
+        update_the_score_computer()
     elif y == 2 and x == 3 and grid_b[2] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_computer()
+        update_the_score_computer()
     elif y == 2 and x == 4 and grid_b[3] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_computer()
+        update_the_score_computer()
     elif y == 3 and x == 1 and grid_c[0] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_computer()
+        update_the_score_computer()
     elif y == 3 and x == 2 and grid_c[1] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_computer()
+        update_the_score_computer()
     elif y == 3 and x == 3 and grid_c[2] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_computer()
+        update_the_score_computer()
     elif y == 3 and x == 4 and grid_c[3] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_computer()
+        update_the_score_computer()
     elif y == 4 and x == 1 and grid_d[0] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_computer()
+        update_the_score_computer()
     elif y == 4 and x == 2 and grid_d[1] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_computer()
+        update_the_score_computer()
     elif (y == 4 and x == 3 and grid_d[2] == "@"):
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_computer()
+        update_the_score_computer()
     elif y == 4 and x == 4 and grid_d[3] == "@":
         print("Congratulate you hit the Target")
-        remove_ship_from_score()
-        update_the_score()
+        remove_ship_from_score_computer()
+        update_the_score_computer()
 
     else:
         print("Sorry please enter new coordinates")

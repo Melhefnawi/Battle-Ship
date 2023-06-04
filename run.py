@@ -19,7 +19,7 @@ previous_input_coordinates_computer = []
 user_ship = 4
 computer_ship = 4
 user_score = 0
-compter_score = 0
+computer_score = 0
 
 
 def create_grid_user():
@@ -132,9 +132,9 @@ def get_user_targets():
 def get_computer_targets():
     global previous_input_coordinates_computer 
 
-    y_axis = random.randrange(4)
-    x_axis = random.randrange(4)
-
+    y_axis = random.randrange(1,4)
+    x_axis = random.randrange(1,4)
+    previous_input_coordinates_computer.append((y_axis,x_axis))
     return y_axis , x_axis
 
 
@@ -300,8 +300,9 @@ def run_game():
     set_ship_location_computer()
     create_grid_user()
     create_grid_computer()
-    while user_ship != 0 or computer_ship !=0:
+    while user_ship != 0 and computer_ship !=0:
         print(user_score)
+        print(computer_score)
         print(previous_input_coordinates_user)
         print(previous_input_coordinates_computer)
         

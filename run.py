@@ -3,7 +3,10 @@ import random
 print("-------------------------------")
 print("Welcome to Ultimate BATTLESHIPS!!\n""Board Size: 4 Number of ships: 4\n""Top left corner is row:1, col:1\n")
 print("-------------------------------")
+"""
+Main variables of the Games
 
+"""
 user_name = input("please enter you name to start game:")
 grid_w = [".", ".", ".", "."]
 grid_x = [".", ".", ".", "."]
@@ -15,7 +18,6 @@ grid_c = [".", ".", ".", "."]
 grid_d = [".", ".", ".", "."]
 previous_input_coordinates_user = []
 previous_input_coordinates_computer = []
-
 user_ship = 4
 computer_ship = 4
 user_score = 0
@@ -23,6 +25,11 @@ computer_score = 0
 
 
 def create_grid_user():
+
+    """
+    This function is used to build the User grid on the consol
+
+    """
 
     for x in range(len(grid_w)):
 
@@ -33,6 +40,11 @@ def create_grid_user():
         print(" ")
         
 def create_grid_computer():
+
+    """
+    This function is used to build the computer grid on the consol
+
+    """
 
     grid_e = [".", ".", ".", "."]
     grid_f = [".", ".", ".", "."]
@@ -51,6 +63,11 @@ def create_grid_computer():
 
 
 def set_ship_location_computer():
+
+    """
+    This function is used to set the location of the user ship in the grid
+
+    """
     global grid_w 
     grid_w = [".", ".", ".", "."]
     global grid_x 
@@ -73,6 +90,11 @@ def set_ship_location_computer():
     
 
 def set_ship_location_user():
+
+    """
+    This function is used to set the location of the computer ship in the grid
+
+    """
     global grid_a 
     grid_a = [".", ".", ".", "."]
     global grid_b 
@@ -95,6 +117,11 @@ def set_ship_location_user():
     
 
 def get_user_targets():
+
+    """
+    This function is used to get the user input Targets and check the availability with the game rules
+
+    """
     global previous_input_coordinates_user
     
     try:
@@ -130,6 +157,12 @@ def get_user_targets():
     return y_axis , x_axis
 
 def get_computer_targets():
+
+    """
+    This function is used to get the random computer input Targets and check the availability with the game rules
+    and append them to save computer input targets.
+
+    """
     global previous_input_coordinates_computer 
 
     y_axis = random.randrange(1,4)
@@ -139,23 +172,45 @@ def get_computer_targets():
 
 
 def remove_ship_from_score_user():
+    """
+    This function is used to reduce the amount of ships if the ships get hit
+    """
     global user_ship
     user_ship -= 1
     
 def remove_ship_from_score_computer():
+
+    """
+    This function is used to reduce the amount of ships if the ships get hit
+    """
     global computer_ship
     computer_ship -= 1
 
 def update_the_score_computer():
+
+    """
+    This function is used to update the score in the case of hitting the Target
+
+    """
     global computer_score
     computer_score += 1
 
 def update_the_score_user():
+
+    """
+    This function is used to update the score in the case of hitting the Target
+
+    """
     global user_score
     user_score += 1
 
 
 def compare_computer_hit_with_ship_location():
+
+    """
+    This function is used to to compare the input hits with the ship locations
+    it reduces the number of ships if hiy happened and increment the score
+    """
     y,x = get_computer_targets()
     if y == 1 and x == 1 and grid_w[0] == "@":
         print("Computer hit the Target")
@@ -226,6 +281,12 @@ def compare_computer_hit_with_ship_location():
         print("Computer missed the Target")
 
 def compare_user_hit_with_ship_location():
+
+    """
+    This function is used to to compare the input hits with the ship locations
+    it reduces the number of ships if hiy happened and increment the score
+
+    """
     y,x = get_user_targets()
     if y == 1 and x == 1 and grid_a[0] == "@":
         print(f"Congratulate {user_name} you hit the Target")
@@ -296,6 +357,14 @@ def compare_user_hit_with_ship_location():
         print(f"Sorry {user_name} you missed Target")
 
 def run_game():
+
+    """
+    This is the Main function for the Game, it sets the locations of the ships and create the boards of both contestants,
+    it stays in a loop during the game time until all the ships of one of the contestant is gone.
+    Then at the end of the game it prints who win the game.
+
+    """
+
     set_ship_location_user()
     set_ship_location_computer()
     print(f"----{user_name} Battle Board------")

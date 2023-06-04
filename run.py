@@ -34,17 +34,23 @@ def create_grid_user():
         
 def create_grid_computer():
 
+    grid_e = [".", ".", ".", "."]
+    grid_f = [".", ".", ".", "."]
+    grid_g = [".", ".", ".", "."]
+    grid_h = [".", ".", ".", "."]
+
+
     for x in range(len(grid_a)):
 
-        print(grid_a[x], end=" ")
-        print(grid_b[x], end=" ")
-        print(grid_c[x], end=" ")
-        print(grid_d[x], end=" ")
+        print(grid_e[x], end=" ")
+        print(grid_f[x], end=" ")
+        print(grid_g[x], end=" ")
+        print(grid_h[x], end=" ")
         print(" ")
 
 
 
-def set_ship_location_user():
+def set_ship_location_computer():
     global grid_w 
     grid_w = [".", ".", ".", "."]
     global grid_x 
@@ -54,7 +60,7 @@ def set_ship_location_user():
     global grid_z 
     grid_z= [".", ".", ".", "."]
     global user_name
-    print (f'{user_name} Welcome')
+    print (f'Welcome {user_name}')
     w_1 = random.randrange(3)
     x_1 = random.randrange(3)
     y_1 = random.randrange(3)
@@ -66,7 +72,7 @@ def set_ship_location_user():
     grid_z[z_1] = "@"
     
 
-def set_ship_location_computer():
+def set_ship_location_user():
     global grid_a 
     grid_a = [".", ".", ".", "."]
     global grid_b 

@@ -300,13 +300,18 @@ def run_game():
     set_ship_location_computer()
     create_grid_user()
     create_grid_computer()
-    while user_ship != 0:
+    while user_ship != 0 or computer_ship !=0:
         print(user_score)
-        print(previous_input_coordinates)
+        print(previous_input_coordinates_user)
+        print(previous_input_coordinates_computer)
         
         compare_user_hit_with_ship_location()
+        compare_computer_hit_with_ship_location()
     else:
-        print("The Enemy surrender and you won the battel")
+        if user_ship == 0:
+           print("The Enemy surrender and you won the battel")
+        else:
+            print("The Enemy won and you lost the Battle")   
 
 
 run_game()

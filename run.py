@@ -313,8 +313,12 @@ def run_game():
         compare_computer_hit_with_ship_location()
     else:
         if user_ship == 0:
-           print("The Enemy surrender and you won the battel")
+            print(f"USER_SCORE:{user_score}")
+            print(f"Computer_SCORE:{computer_score}")
+            print("The Enemy surrender and you won the battel")
         else:
+            print(f"USER_SCORE:{user_score}")
+            print(f"Computer_SCORE:{computer_score}")
             print("The Enemy won and you lost the Battle")   
 
 

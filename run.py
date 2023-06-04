@@ -1,7 +1,7 @@
 import random
 
 print("-------------------------------")
-print("Welcome to Ultimate BATTLESHIPS!!\n""Board Size: 5 Number of ships: 4\n""Top left corner is row:0, col:0\n")
+print("Welcome to Ultimate BATTLESHIPS!!\n""Board Size: 4 Number of ships: 4\n""Top left corner is row:1, col:1\n")
 print("-------------------------------")
 
 user_name = input("please enter you name to start game:")
@@ -42,12 +42,6 @@ def create_grid_computer():
         print(grid_d[x], end=" ")
         print(" ")
 
-
-def change_grid_value():
-
-    x = input("please enter the value of grid:")
-    grid_w[0] = x
-    print(grid_w)
 
 
 def set_ship_location_user():
@@ -298,13 +292,15 @@ def compare_computer_hit_with_ship_location():
 def run_game():
     set_ship_location_user()
     set_ship_location_computer()
+    print(f"----{user_name} Battle Board------")
     create_grid_user()
+    print(f"----Computer Battle Board------")
     create_grid_computer()
     while user_ship != 0 and computer_ship !=0:
-        print(user_score)
-        print(computer_score)
-        print(previous_input_coordinates_user)
-        print(previous_input_coordinates_computer)
+        print(f"USER_SCORE:{user_score}")
+        print(f"Computer_SCORE:{computer_score}")
+        print(f"Input_Coordinates_User:{previous_input_coordinates_user}")
+        print(f"Input_Coordinates_Computer{previous_input_coordinates_computer}")
         
         compare_user_hit_with_ship_location()
         compare_computer_hit_with_ship_location()

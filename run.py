@@ -158,142 +158,142 @@ def update_the_score_user():
 def compare_computer_hit_with_ship_location():
     y,x = get_computer_targets()
     if y == 1 and x == 1 and grid_w[0] == "@":
-        print("Congratulate you hit the Target")
+        print("Computer hit the Target")
         remove_ship_from_score_computer()
         update_the_score_computer()
     elif y == 1 and x == 2 and grid_w[1] == "@":
-        print("Congratulate you hit the Target")
+        print("Computer hit the Target")
         remove_ship_from_score_computer()
         update_the_score_computer()
     elif y == 1 and x == 3 and grid_w[2] == "@":
-        print("Congratulate you hit the Target")
+        print("Computer hit the Target")
         remove_ship_from_score_computer()
         update_the_score_computer()
     elif y == 1 and x == 4 and grid_w[3] == "@":
-        print("Congratulate you hit the Target")
+        print("Computer hit the Target")
         remove_ship_from_score_computer()
         update_the_score_computer()
     elif y == 2 and x == 1 and grid_x[0] == "@":
-        print("Congratulate you hit the Target")
+        print("Computer hit the Target")
         remove_ship_from_score_computer()
         update_the_score_computer()
     elif y == 2 and x == 2 and grid_x[1] == "@":
-        print("Congratulate you hit the Target")
+        print("Computer hit the Target")
         remove_ship_from_score_computer()
         update_the_score_computer()
     elif y == 2 and x == 3 and grid_x[2] == "@":
-        print("Congratulate you hit the Target")
+        print("Computer hit the Target")
         remove_ship_from_score_computer()
         update_the_score_computer()
     elif y == 2 and x == 4 and grid_x[3] == "@":
-        print("Congratulate you hit the Target")
+        print("Computer hit the Target")
         remove_ship_from_score_computer()
         update_the_score_computer()
     elif y == 3 and x == 1 and grid_y[0] == "@":
-        print("Congratulate you hit the Target")
+        print("Computer hit the Target")
         remove_ship_from_score_computer()
         update_the_score_computer()
     elif y == 3 and x == 2 and grid_y[1] == "@":
-        print("Congratulate you hit the Target")
+        print("Computer hit the Target")
         remove_ship_from_score_computer()
         update_the_score_computer()
     elif y == 3 and x == 3 and grid_y[2] == "@":
-        print("Congratulate you hit the Target")
+        print("Computer hit the Target")
         remove_ship_from_score_computer()
         update_the_score_computer()
     elif y == 3 and x == 4 and grid_y[3] == "@":
-        print("Congratulate you hit the Target")
+        print("Computer hit the Target")
         remove_ship_from_score_computer()
         update_the_score_computer()
     elif y == 4 and x == 1 and grid_z[0] == "@":
-        print("Congratulate you hit the Target")
+        print("Computer hit the Target")
         remove_ship_from_score_computer()
         update_the_score_computer()
     elif y == 4 and x == 2 and grid_z[1] == "@":
-        print("Congratulate you hit the Target")
+        print("Computer hit the Target")
         remove_ship_from_score_computer()
         update_the_score_computer()
     elif (y == 4 and x == 3 and grid_z[2] == "@"):
-        print("Congratulate you hit the Target")
+        print("Computer hit the Target")
         remove_ship_from_score_computer()
         update_the_score_computer()
     elif y == 4 and x == 4 and grid_z[3] == "@":
-        print("Congratulate you hit the Target")
+        print("Computer hit the Target")
         remove_ship_from_score_computer()
         update_the_score_computer()
 
     else:
-        print("Sorry please enter new coordinates")
+        print("Computer missed the Target")
 
 def compare_user_hit_with_ship_location():
     y,x = get_user_targets()
     if y == 1 and x == 1 and grid_a[0] == "@":
-        print("Congratulate you hit the Target")
+        print(f"Congratulate{user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 1 and x == 2 and grid_a[1] == "@":
-        print("Congratulate you hit the Target")
+        print(f"Congratulate{user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 1 and x == 3 and grid_a[2] == "@":
-        print("Congratulate you hit the Target")
+       print(f"Congratulate{user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 1 and x == 4 and grid_a[3] == "@":
-        print("Congratulate you hit the Target")
+        print(f"Congratulate{user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 2 and x == 1 and grid_b[0] == "@":
-        print("Congratulate you hit the Target")
+        print(f"Congratulate{user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 2 and x == 2 and grid_b[1] == "@":    
-        print("Congratulate you hit the Target")
+        print(f"Congratulate{user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 2 and x == 2 and grid_b[2] == "@":    
-        print("Congratulate you hit the Target")
+        print(f"Congratulate{user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 2 and x == 4 and grid_b[3] == "@":
-        print("Congratulate you hit the Target")
+        print(f"Congratulate{user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 3 and x == 1 and grid_c[0] == "@":
-        print("Congratulate you hit the Target")
+        print(f"Congratulate{user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 3 and x == 2 and grid_c[1] == "@":
-        print("Congratulate you hit the Target")
+        print(f"Congratulate{user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 3 and x == 3 and grid_c[2] == "@":
-        print("Congratulate you hit the Target")
+        print(f"Congratulate{user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 3 and x == 4 and grid_c[3] == "@":
-        print("Congratulate you hit the Target")
+        print(f"Congratulate{user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 4 and x == 1 and grid_d[0] == "@":
-        print("Congratulate you hit the Target")
+        print(f"Congratulate{user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 4 and x == 2 and grid_d[1] == "@":
-        print("Congratulate you hit the Target")
+        print(f"Congratulate{user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif (y == 4 and x == 3 and grid_d[2] == "@"):
-        print("Congratulate you hit the Target")
+        print(f"Congratulate{user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 4 and x == 4 and grid_d[3] == "@":
-        print("Congratulate you hit the Target")
+        print(f"Congratulate{user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
 
     else:
-        print("Sorry please enter new coordinates")
+        print(f"Sorry{user_name} you missed Target")
 
 def run_game():
     set_ship_location_user()

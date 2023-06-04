@@ -228,72 +228,72 @@ def compare_computer_hit_with_ship_location():
 def compare_user_hit_with_ship_location():
     y,x = get_user_targets()
     if y == 1 and x == 1 and grid_a[0] == "@":
-        print(f"Congratulate{user_name} you hit the Target")
+        print(f"Congratulate {user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 1 and x == 2 and grid_a[1] == "@":
-        print(f"Congratulate{user_name} you hit the Target")
+        print(f"Congratulate {user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 1 and x == 3 and grid_a[2] == "@":
-        print(f"Congratulate{user_name} you hit the Target")
+        print(f"Congratulate {user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 1 and x == 4 and grid_a[3] == "@":
-        print(f"Congratulate{user_name} you hit the Target")
+        print(f"Congratulate {user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 2 and x == 1 and grid_b[0] == "@":
-        print(f"Congratulate{user_name} you hit the Target")
+        print(f"Congratulate {user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 2 and x == 2 and grid_b[1] == "@":    
-        print(f"Congratulate{user_name} you hit the Target")
+        print(f"Congratulate {user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 2 and x == 2 and grid_b[2] == "@":    
-        print(f"Congratulate{user_name} you hit the Target")
+        print(f"Congratulate {user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 2 and x == 4 and grid_b[3] == "@":
-        print(f"Congratulate{user_name} you hit the Target")
+        print(f"Congratulate {user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 3 and x == 1 and grid_c[0] == "@":
-        print(f"Congratulate{user_name} you hit the Target")
+        print(f"Congratulate {user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 3 and x == 2 and grid_c[1] == "@":
-        print(f"Congratulate{user_name} you hit the Target")
+        print(f"Congratulate {user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 3 and x == 3 and grid_c[2] == "@":
-        print(f"Congratulate{user_name} you hit the Target")
+        print(f"Congratulate {user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 3 and x == 4 and grid_c[3] == "@":
-        print(f"Congratulate{user_name} you hit the Target")
+        print(f"Congratulate {user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 4 and x == 1 and grid_d[0] == "@":
-        print(f"Congratulate{user_name} you hit the Target")
+        print(f"Congratulate {user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 4 and x == 2 and grid_d[1] == "@":
-        print(f"Congratulate{user_name} you hit the Target")
+        print(f"Congratulate {user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif (y == 4 and x == 3 and grid_d[2] == "@"):
-        print(f"Congratulate{user_name} you hit the Target")
+        print(f"Congratulate {user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 4 and x == 4 and grid_d[3] == "@":
-        print(f"Congratulate{user_name} you hit the Target")
+        print(f"Congratulate {user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
 
     else:
-        print(f"Sorry{user_name} you missed Target")
+        print(f"Sorry {user_name} you missed Target")
 
 def run_game():
     set_ship_location_user()

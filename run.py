@@ -236,7 +236,7 @@ def compare_user_hit_with_ship_location():
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 1 and x == 3 and grid_a[2] == "@":
-       print(f"Congratulate{user_name} you hit the Target")
+        print(f"Congratulate{user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
     elif y == 1 and x == 4 and grid_a[3] == "@":

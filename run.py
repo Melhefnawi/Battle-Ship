@@ -155,7 +155,7 @@ def update_the_score_user():
     user_score += 1
 
 
-def compare_user_hit_with_ship_location():
+def compare_computer_hit_with_ship_location():
     y,x = get_user_targets()
     if y == 1 and x == 1 and grid_w[0] == "@":
         print("Congratulate you hit the Target")
@@ -225,7 +225,7 @@ def compare_user_hit_with_ship_location():
     else:
         print("Sorry please enter new coordinates")
 
-def compare_computer_hit_with_ship_location():
+def compare_user_hit_with_ship_location():
     y,x = get_computer_targets()
     if y == 1 and x == 1 and grid_a[0] == "@":
         print("Congratulate you hit the Target")

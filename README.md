@@ -8,7 +8,7 @@ Each battleship occupies one square on the board.
 ###### Here is a live version of my project 
 
 ## add a photo here for ami 
-<img src="images/photo/AMI reponsive.JPG">
+<img src="Battle-Ship/images/photo/AMI reponsive.JPG">
 
 ## How to play 
 

@@ -101,7 +101,7 @@ The Winner is the player who sink all the their opponent's battleships first.
   # Creadit 
 
     - Code institute for the deployment terminal
-    - Wikipedia for the details of the Battleships game
+    - Wikipedia for the details of the Battleships
 
 
 

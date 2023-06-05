@@ -140,15 +140,14 @@ def get_user_targets():
             for x in range(len(previous_input_coordinates_user)):
 
                 while previous_input_coordinates_user[x] == (y_axis, x_axis):
-                    print("please enter new set of coordinates,
-                          these coordinates were used before")
+                    print("please enter new set of coordinates:")
                     y_axis = int(input("please enter a new column no:"))
                     x_axis = int(input("please enter a new row no:"))
 
             else:
                 previous_input_coordinates_user.append((y_axis, x_axis))
-                previous_input_coordinates_user =
-                list(dict.fromkeys(previous_input_coordinates_user))
+                previous_input_coordinates_user = list(dict.fromkeys(previous_input_coordinates_user))
+               
 
     except ValueError:
         try:
@@ -388,8 +387,7 @@ def run_game():
         print(f"USER_SCORE:{user_score}")
         print(f"Computer_SCORE:{computer_score}")
         print(f"Input_Coordinates_User:{previous_input_coordinates_user}")
-        print(f"Input_Coordinates_Computer
-              {previous_input_coordinates_computer}")
+        print(f"Input_Coordinates_Computer {previous_input_coordinates_computer}")
         compare_user_hit_with_ship_location()
         compare_computer_hit_with_ship_location()
     else:

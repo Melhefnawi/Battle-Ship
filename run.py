@@ -1,7 +1,8 @@
 import random
 
 print("-------------------------------")
-print("Welcome to Ultimate BATTLESHIPS!!\n""Board Size: 4 Number of ships: 4\n""Top left corner is row:1, col:1\n")
+print("Welcome to Ultimate BATTLESHIPS!!\n""Board Size: 4 Number of ships: 4\n"
+      "Top left corner is row:1, col:1\n")
 print("-------------------------------")
 """
 Main variables of the Games
@@ -38,11 +39,12 @@ def create_grid_user():
         print(grid_y[x], end=" ")
         print(grid_z[x], end=" ")
         print(" ")
-        
+
+
 def create_grid_computer():
 
     """
-    This function is used to build the computer grid on the consol
+     This function is used to build the computer grid on the consol
 
     """
 
@@ -50,7 +52,6 @@ def create_grid_computer():
     grid_f = [".", ".", ".", "."]
     grid_g = [".", ".", ".", "."]
     grid_h = [".", ".", ".", "."]
-
 
     for x in range(len(grid_e)):
 
@@ -61,23 +62,22 @@ def create_grid_computer():
         print(" ")
 
 
-
 def set_ship_location_computer():
 
     """
     This function is used to set the location of the user ship in the grid
 
     """
-    global grid_w 
+    global grid_w
     grid_w = [".", ".", ".", "."]
-    global grid_x 
-    grid_x= [".", ".", ".", "."]
-    global grid_y 
-    grid_y= [".", ".", ".", "."]
-    global grid_z 
-    grid_z= [".", ".", ".", "."]
+    global grid_x
+    grid_x = [".", ".", ".", "."]
+    global grid_y
+    grid_y = [".", ".", ".", "."]
+    global grid_z
+    grid_z = [".", ".", ".", "."]
     global user_name
-    print (f'Welcome {user_name}')
+    print(f'Welcome {user_name}')
     w_1 = random.randrange(3)
     x_1 = random.randrange(3)
     y_1 = random.randrange(3)
@@ -87,7 +87,7 @@ def set_ship_location_computer():
     grid_x[x_1] = "@"
     grid_y[y_1] = "@"
     grid_z[z_1] = "@"
-    
+
 
 def set_ship_location_user():
 
@@ -95,16 +95,16 @@ def set_ship_location_user():
     This function is used to set the location of the computer ship in the grid
 
     """
-    global grid_a 
+    global grid_a
     grid_a = [".", ".", ".", "."]
-    global grid_b 
-    grid_b= [".", ".", ".", "."]
-    global grid_c 
-    grid_c= [".", ".", ".", "."]
-    global grid_d 
-    grid_d= [".", ".", ".", "."]
+    global grid_b
+    grid_b = [".", ".", ".", "."]
+    global grid_c
+    grid_c = [".", ".", ".", "."]
+    global grid_d
+    grid_d = [".", ".", ".", "."]
     global user_name
-    print ("computer board")
+    print("computer board")
     w_1 = random.randrange(3)
     x_1 = random.randrange(3)
     y_1 = random.randrange(3)
@@ -114,61 +114,66 @@ def set_ship_location_user():
     grid_b[x_1] = "@"
     grid_c[y_1] = "@"
     grid_d[z_1] = "@"
-    
+
 
 def get_user_targets():
 
     """
-    This function is used to get the user input Targets and check the availability with the game rules
+    This function is used to get the user input Targets
+    and check the availability with the game rules
 
     """
     global previous_input_coordinates_user
-    
-    try:
-       y_axis = int(input("please enter the column no:"))
-       x_axis = int(input("please enter the row no:"))
 
-       while y_axis > 4 and x_axis > 4:
-           y_axis = int(input("please enter number between (1 & 4):"))
-           x_axis = int(input("please enter number between (1 & 4):"))
-       if previous_input_coordinates_user == [] :
-           previous_input_coordinates_user.append((y_axis,x_axis))
-           
-       else:
+    try:
+        y_axis = int(input("please enter the column no:"))
+        x_axis = int(input("please enter the row no:"))
+
+        while y_axis > 4 and x_axis > 4:
+            y_axis = int(input("please enter number between (1 & 4):"))
+            x_axis = int(input("please enter number between (1 & 4):"))
+        if previous_input_coordinates_user == []:
+            previous_input_coordinates_user.append((y_axis, x_axis))
+
+        else:
 
             for x in range(len(previous_input_coordinates_user)):
 
-                while previous_input_coordinates_user[x] == (y_axis,x_axis) :
-                    print("please enter new set of coordinates, these coordinates were used before")
+                while previous_input_coordinates_user[x] == (y_axis, x_axis):
+                    print("please enter new set of coordinates,
+                          these coordinates were used before")
                     y_axis = int(input("please enter a new column no:"))
                     x_axis = int(input("please enter a new row no:"))
-                
+
             else:
-                previous_input_coordinates_user.append((y_axis,x_axis))
-                previous_input_coordinates_user = list(dict.fromkeys(previous_input_coordinates_user))
-                
+                previous_input_coordinates_user.append((y_axis, x_axis))
+                previous_input_coordinates_user =
+                list(dict.fromkeys(previous_input_coordinates_user))
+
     except ValueError:
         try:
-           y_axis = int(input("please enter an integer no:"))
-           x_axis = int(input("please enter an integer no:"))
-        except ValueError :
-            run_game()   
-       
-    return y_axis , x_axis
+            y_axis = int(input("please enter an integer no:"))
+            x_axis = int(input("please enter an integer no:"))
+        except ValueError:
+            run_game()
+
+    return y_axis, x_axis
+
 
 def get_computer_targets():
 
     """
-    This function is used to get the random computer input Targets and check the availability with the game rules
+    This function is used to get the random computer input Targets
+    and check the availability with the game rules
     and append them to save computer input targets.
 
     """
-    global previous_input_coordinates_computer 
+    global previous_input_coordinates_computer
 
-    y_axis = random.randrange(1,4)
-    x_axis = random.randrange(1,4)
-    previous_input_coordinates_computer.append((y_axis,x_axis))
-    return y_axis , x_axis
+    y_axis = random.randrange(1, 4)
+    x_axis = random.randrange(1, 4)
+    previous_input_coordinates_computer.append((y_axis, x_axis))
+    return y_axis, x_axis
 
 
 def remove_ship_from_score_user():
@@ -177,7 +182,8 @@ def remove_ship_from_score_user():
     """
     global user_ship
     user_ship -= 1
-    
+
+
 def remove_ship_from_score_computer():
 
     """
@@ -185,6 +191,7 @@ def remove_ship_from_score_computer():
     """
     global computer_ship
     computer_ship -= 1
+
 
 def update_the_score_computer():
 
@@ -194,6 +201,7 @@ def update_the_score_computer():
     """
     global computer_score
     computer_score += 1
+
 
 def update_the_score_user():
 
@@ -211,7 +219,7 @@ def compare_computer_hit_with_ship_location():
     This function is used to to compare the input hits with the ship locations
     it reduces the number of ships if hiy happened and increment the score
     """
-    y,x = get_computer_targets()
+    y, x = get_computer_targets()
     if y == 1 and x == 1 and grid_w[0] == "@":
         print("Computer hit the Target")
         remove_ship_from_score_computer()
@@ -280,6 +288,7 @@ def compare_computer_hit_with_ship_location():
     else:
         print("Computer missed the Target")
 
+
 def compare_user_hit_with_ship_location():
 
     """
@@ -287,7 +296,7 @@ def compare_user_hit_with_ship_location():
     it reduces the number of ships if hiy happened and increment the score
 
     """
-    y,x = get_user_targets()
+    y, x = get_user_targets()
     if y == 1 and x == 1 and grid_a[0] == "@":
         print(f"Congratulate {user_name} you hit the Target")
         remove_ship_from_score_user()
@@ -308,11 +317,11 @@ def compare_user_hit_with_ship_location():
         print(f"Congratulate {user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
-    elif y == 2 and x == 2 and grid_b[1] == "@":    
+    elif y == 2 and x == 2 and grid_b[1] == "@":
         print(f"Congratulate {user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
-    elif y == 2 and x == 2 and grid_b[2] == "@":    
+    elif y == 2 and x == 2 and grid_b[2] == "@":
         print(f"Congratulate {user_name} you hit the Target")
         remove_ship_from_score_user()
         update_the_score_user()
@@ -356,11 +365,14 @@ def compare_user_hit_with_ship_location():
     else:
         print(f"Sorry {user_name} you missed Target")
 
+
 def run_game():
 
     """
-    This is the Main function for the Game, it sets the locations of the ships and create the boards of both contestants,
-    it stays in a loop during the game time until all the ships of one of the contestant is gone.
+    This is the Main function for the Game, it sets the locations of the
+    ships and create the boards of both contestants,
+    it stays in a loop during the game time until all
+    the ships of one of the contestant is gone.
     Then at the end of the game it prints who win the game.
 
     """
@@ -371,13 +383,13 @@ def run_game():
     create_grid_user()
     print(f"----Computer Battle Board------")
     create_grid_computer()
-    while user_ship != 0 and computer_ship !=0:
+    while user_ship != 0 and computer_ship != 0:
         print(f"---------------New Round---------------")
         print(f"USER_SCORE:{user_score}")
         print(f"Computer_SCORE:{computer_score}")
         print(f"Input_Coordinates_User:{previous_input_coordinates_user}")
-        print(f"Input_Coordinates_Computer{previous_input_coordinates_computer}")
-        
+        print(f"Input_Coordinates_Computer
+              {previous_input_coordinates_computer}")
         compare_user_hit_with_ship_location()
         compare_computer_hit_with_ship_location()
     else:
@@ -388,7 +400,7 @@ def run_game():
         else:
             print(f"USER_SCORE:{user_score}")
             print(f"Computer_SCORE:{computer_score}")
-            print("The Enemy won and you lost the Battle")   
+            print("The Enemy won and you lost the Battle")
 
 
 run_game()

@@ -23,5 +23,71 @@ The Player and the computer then take it in turns to make guesses and try to sin
 
 The Winner is the player who sink all the their opponent's battleships first.
 
+# Features
+
+## Existing Features
+
+- Random board generation 
+   - ships are randomly placed on both the player and computer bords
+   - The player cannot see where the computer's ships are.
+
+   ## add photo here for the board generation 
+
+   - Play against the computer
+   - Accepts user input 
+   - Maintains score
+
+   ## add another photo to show the above 
+
+- Input validation and error-checking 
+  - You cannot enter coordinates outside the size of the grid 
+  - You must enter numbers
+  - You cannot enter the same guess twice
+
+  ## add photo here to show above 
+
+  - Data maintained in class instances
+
+  ## Future Features
+
+  - Allow player to select the board size and number of ships 
+  - Allow player to position ships themselves
+  - Have ship larger than 1x1
+
+  ## Data Model 
+
+  I decided to use a sets of functions as my model. The game creates sets functions, each function control a certain task to perform
+
+  All the main varialbles have been created at the beginning of the game which include the size of the boards, previous coordinate entered by each player and computer, number of ships, and score for both players
+
+  The game composed of sets of fuction, which help in creating the boards for both player, and randomly set the location of ships then game start to gather the input from both player, then compare the input with pervious coordinate and the ship location, to indicate if the ship was hit and a point is scored
+
+  ## Testing 
+
+  I have manulally tested this project by doing the following 
+
+  - Passed the code through a PEP8 linter and confirmed there are no problems
+  - Given invalid inputs strings when number are expected out of bounds input, same input twice
+  - Tested in my local terminal and Code institute Heroku terminal 
+
+  ## Bugs 
+
+  Solved Bugs 
+
+  - When I wrote the project i was getting undefined variable errors, i fixed this by adding to all the variables that required to be used outside the function
+
+  - While trying to add string instead of integer, i was getting a value error, i fixed this by putting code between try and except block fixed the error by requiring inserting a integer instead of string.
+
+  ### Remaining Bugs 
+
+  - No bugs remaining
+
+  ## Validator Testing 
+
+  - PEP8 
+    - No errors were returned from PEP8online.com
+
+
+
 
 

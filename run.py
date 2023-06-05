@@ -76,7 +76,6 @@ def set_ship_location_computer():
     grid_y = [".", ".", ".", "."]
     global grid_z
     grid_z = [".", ".", ".", "."]
-    global user_name
     print(f'Welcome {user_name}')
     w_1 = random.randrange(3)
     x_1 = random.randrange(3)
@@ -103,7 +102,6 @@ def set_ship_location_user():
     grid_c = [".", ".", ".", "."]
     global grid_d
     grid_d = [".", ".", ".", "."]
-    global user_name
     print("computer board")
     w_1 = random.randrange(3)
     x_1 = random.randrange(3)
@@ -147,7 +145,6 @@ def get_user_targets():
             else:
                 previous_input_user.append((y_axis, x_axis))
                 previous_input_user = list(dict.fromkeys(previous_input_user))
-               
 
     except ValueError:
         try:
@@ -167,7 +164,7 @@ def get_computer_targets():
     and append them to save computer input targets.
 
     """
-    global previous_input_coordinates_computer
+    global previous_input_computer
 
     y_axis = random.randrange(1, 4)
     x_axis = random.randrange(1, 4)

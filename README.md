@@ -7,8 +7,7 @@ Each battleship occupies one square on the board.
 
 ###### Here is a live version of my project 
 
-## add a photo here for ami 
-<img src="Battle-Ship/images/photo/AMI reponsive.JPG">
+<img src="/images/photo/AMI responsive.JPG">
 
 ## How to play 
 
@@ -32,20 +31,23 @@ The Winner is the player who sink all the their opponent's battleships first.
    - ships are randomly placed on both the player and computer bords
    - The player cannot see where the computer's ships are.
 
-   ## add photo here for the board generation 
+   
+   <img src="images/photo/Game boards.JPG">
 
    - Play against the computer
    - Accepts user input 
    - Maintains score
 
-   ## add another photo to show the above 
+
+
+   <img src="images/photo/New round.JPG">
 
 - Input validation and error-checking 
   - You cannot enter coordinates outside the size of the grid 
   - You must enter numbers
   - You cannot enter the same guess twice
 
-  ## add photo here to show above 
+  <img src="images/photo/Validate photo.JPG">
 
   - Data maintained in class instances
 
@@ -87,6 +89,8 @@ The Winner is the player who sink all the their opponent's battleships first.
 
   - PEP8 
     - No errors were returned from PEP8online.com
+
+    <img src="images/photo/PEP8 pyhton.JPG">
 
   # Deployment
 

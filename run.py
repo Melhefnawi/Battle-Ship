@@ -17,8 +17,8 @@ grid_a = [".", ".", ".", "."]
 grid_b = [".", ".", ".", "."]
 grid_c = [".", ".", ".", "."]
 grid_d = [".", ".", ".", "."]
-previous_input_coordinates_user = []
-previous_input_coordinates_computer = []
+previous_input_user = []
+previous_input_computer = []
 user_ship = 4
 computer_ship = 4
 user_score = 0
@@ -123,7 +123,7 @@ def get_user_targets():
     and check the availability with the game rules
 
     """
-    global previous_input_coordinates_user
+    global previous_input_user
 
     try:
         y_axis = int(input("please enter the column no:"))
@@ -132,21 +132,21 @@ def get_user_targets():
         while y_axis > 4 and x_axis > 4:
             y_axis = int(input("please enter number between (1 & 4):"))
             x_axis = int(input("please enter number between (1 & 4):"))
-        if previous_input_coordinates_user == []:
-            previous_input_coordinates_user.append((y_axis, x_axis))
+        if previous_input_user == []:
+            previous_input_user.append((y_axis, x_axis))
 
         else:
 
-            for x in range(len(previous_input_coordinates_user)):
+            for x in range(len(previous_input_user)):
 
-                while previous_input_coordinates_user[x] == (y_axis, x_axis):
+                while previous_input_user[x] == (y_axis, x_axis):
                     print("please enter new set of coordinates:")
                     y_axis = int(input("please enter a new column no:"))
                     x_axis = int(input("please enter a new row no:"))
 
             else:
-                previous_input_coordinates_user.append((y_axis, x_axis))
-                previous_input_coordinates_user = list(dict.fromkeys(previous_input_coordinates_user))
+                previous_input_user.append((y_axis, x_axis))
+                previous_input_user = list(dict.fromkeys(previous_input_user))
                
 
     except ValueError:
@@ -171,7 +171,7 @@ def get_computer_targets():
 
     y_axis = random.randrange(1, 4)
     x_axis = random.randrange(1, 4)
-    previous_input_coordinates_computer.append((y_axis, x_axis))
+    previous_input_computer.append((y_axis, x_axis))
     return y_axis, x_axis
 
 
@@ -386,8 +386,8 @@ def run_game():
         print(f"---------------New Round---------------")
         print(f"USER_SCORE:{user_score}")
         print(f"Computer_SCORE:{computer_score}")
-        print(f"Input_Coordinates_User:{previous_input_coordinates_user}")
-        print(f"Input_Coordinates_Computer {previous_input_coordinates_computer}")
+        print(f"Input_Coordinates_User:{previous_input_user}")
+        print(f"Input_Coordinates_Computer {previous_input_computer}")
         compare_user_hit_with_ship_location()
         compare_computer_hit_with_ship_location()
     else:

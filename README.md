@@ -1,6 +1,6 @@
 # ULTIMATE Battleships
 
-Ultimate Battleships is a Python terminal game, which run on the mock terminal on Heroku
+Ultimate Battleships is a Python terminal game, which runs on the mock terminal on Heroku
 
 Users can try to beat the computer by finding all the computer's battleships before the computer finds theirs.
 Each battleship occupies one square on the board.

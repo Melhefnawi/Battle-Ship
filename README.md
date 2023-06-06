@@ -59,11 +59,13 @@ The Winner is the player who sink all the their opponent's battleships first.
 
   ## Data Model 
 
-  I decided to use a sets of functions as my model. The game creates sets functions, each function control a certain task to perform
+  I decided to use a set of functions as my model. The game creates sets of functions; each function controls a certain task to perform.
 
-  All the main varialbles have been created at the beginning of the game which include the size of the boards, previous coordinate entered by each player and computer, number of ships, and score for both players
 
-  The game composed of sets of fuction, which help in creating the boards for both player, and randomly set the location of ships then game start to gather the input from both player, then compare the input with pervious coordinate and the ship location, to indicate if the ship was hit and a point is scored
+    All the main variables have been created at the beginning of the game, which include the size of the boards, previous coordinates entered by each player and computer, number of ships, and score for both players.
+
+
+    The game is composed of sets of functions, which help in creating the boards for both players and randomly set the location of ships. The game then starts to gather the inputs from both players, then compares the inputs with previous coordinates and the ship location to indicate if the ship was hit and a point is scored.
 
   ## Testing 
 
@@ -77,9 +79,10 @@ The Winner is the player who sink all the their opponent's battleships first.
 
   Solved Bugs 
 
-  - When I wrote the project i was getting undefined variable errors, i fixed this by adding to all the variables that required to be used outside the function
+  - When I wrote the project, I was getting undefined variable errors. I fixed this by adding all the variables that were required to be used outside the function.
 
-  - While trying to add string instead of integer, i was getting a value error, i fixed this by putting code between try and except block fixed the error by requiring inserting a integer instead of string.
+
+  -  While trying to add a string instead of an integer, I was getting a value error. I fixed this by putting code between try and except blocks, which fixed the error by requiring inserting an integer instead of a string.
 
   ### Remaining Bugs 
 

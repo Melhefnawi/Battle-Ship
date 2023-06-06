@@ -5,7 +5,7 @@ print("Welcome to Ultimate BATTLESHIPS!!\n""Board Size: 4 Number of ships: 4\n"
       "Top left corner is row:1, col:1\n")
 print("-------------------------------")
 """
-Main variables of the Games
+Main variables of the Game
 
 """
 user_name = input("please enter you name to start game:")

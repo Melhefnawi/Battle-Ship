@@ -49,7 +49,6 @@ The Winner is the player who sink all the their opponent's battleships first.
 
   <img src="images/photo/Validate photo.JPG">
 
-  - Data maintained in class instances
 
   ## Future Features
 

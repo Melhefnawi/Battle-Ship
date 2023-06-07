@@ -165,7 +165,7 @@ def get_computer_targets():
 
     """
     global previous_input_computer
-
+    previous_input_computer = []
     y_axis = random.randrange(1, 4)
     x_axis = random.randrange(1, 4)
     previous_input_computer.append((y_axis, x_axis))

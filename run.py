@@ -1,9 +1,6 @@
 import random
 
-print("-------------------------------")
-print("Welcome to Ultimate BATTLESHIPS!!\n""Board Size: 4 Number of ships: 4\n"
-      "Top left corner is row:1, col:1\n")
-print("-------------------------------")
+
 """
 Main variables of the Game
 
@@ -23,6 +20,20 @@ user_ship = 4
 computer_ship = 4
 user_score = 0
 computer_score = 0
+
+
+class Welcome:
+
+    """
+    Class to print the welcome message to the player
+
+    """
+    def welcome_message(self):
+        return ("--------------------------------\n"
+                "Welcome to Ultimate BATTLESHIPS!!\n"
+                "Board Size: 4 Number of ships: 4\n"
+                "Top left corner is row:1, col:1\n"
+                "-------------------------------")
 
 
 def create_grid_user():
@@ -81,7 +92,7 @@ def set_ship_location_computer():
     x_1 = random.randrange(3)
     y_1 = random.randrange(3)
     z_1 = random.randrange(3)
-    print(w_1, x_1, y_1, z_1)
+   
     grid_w[w_1] = "@"
     grid_x[x_1] = "@"
     grid_y[y_1] = "@"
@@ -102,7 +113,7 @@ def set_ship_location_user():
     grid_c = [".", ".", ".", "."]
     global grid_d
     grid_d = [".", ".", ".", "."]
-    print("computer board")
+
     w_1 = random.randrange(3)
     x_1 = random.randrange(3)
     y_1 = random.randrange(3)
@@ -398,4 +409,6 @@ def run_game():
             print("The Enemy won and you lost the Battle")
 
 
+greeting_message = Welcome()
+print(greeting_message.welcome_message())
 run_game()

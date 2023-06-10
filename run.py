@@ -92,7 +92,6 @@ def set_ship_location_computer():
     x_1 = random.randrange(3)
     y_1 = random.randrange(3)
     z_1 = random.randrange(3)
-   
     grid_w[w_1] = "@"
     grid_x[x_1] = "@"
     grid_y[y_1] = "@"
@@ -118,7 +117,7 @@ def set_ship_location_user():
     x_1 = random.randrange(3)
     y_1 = random.randrange(3)
     z_1 = random.randrange(3)
-    print(w_1, x_1, y_1, z_1)
+   
     grid_a[w_1] = "@"
     grid_b[x_1] = "@"
     grid_c[y_1] = "@"
